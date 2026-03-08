@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-textPrimary font-sans antialiased selection:bg-textSecondary selection:text-white;
+  }
+}
+
+@layer components {
+  .glassmorphism {
+    @apply bg-surface backdrop-blur-xl border border-white/40 shadow-glass transition-all duration-300;
+  }
+  
+  .glassmorphism:hover {
+    @apply shadow-glass-hover border-white/60 bg-white/80;
+  }
+  
+  .pill-button {
+    @apply rounded-full px-5 py-2 text-sm font-medium transition-colors duration-200 active:scale-95 whitespace-nowrap;
+  }
+  
+  .pill-button-active {
+    @apply bg-textPrimary text-white shadow-md;
+  }
+  
+  .pill-button-inactive {
+    @apply bg-white/60 text-textSecondary hover:bg-white border border-white/50 backdrop-blur-md;
+  }
+}
+
+/* Hide scrollbar for horizontal scrolling filter bar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
